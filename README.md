@@ -4,6 +4,7 @@ Design source for the redesigned landowner page (Design canvas files).
 
 - `Main.dc.html`: the page (fluid, mobile first, light and dark themes)
 - `Mobile.dc.html`: the same page framed at 390px
+- `Developers.dc.html`, `Communities.dc.html`: the other two audiences, copy from k2renew.com
 - `Faq*.dc.html`: five FAQ pages, answers from k2renew.com/resources and the land criteria (`FaqPage` is the shared template)
 - `canvas.json`: canvas layout index
 

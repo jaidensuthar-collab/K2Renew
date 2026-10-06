@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>K2 Renew, for communities</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@600;700&family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+.k2{--bg:#F6F5EC;--band:#EBE4D0;--ink:#111B15;--ink2:#38443D;--rule:#BDB8A3;--green:#1E4B30;--btn:#1E4B30;--btn-ink:#FFFFFF;--focus:#111B15;--deep:#1E4B30;--deep-ink:#F6F5EC;
+background:var(--bg);color:var(--ink);font-family:'Atkinson Hyperlegible',system-ui,sans-serif;font-size:18px;line-height:1.65}
+@media (prefers-color-scheme: dark){.k2{--bg:#0F1611;--band:#172019;--ink:#EDF0E4;--ink2:#B9C4B5;--rule:#3A4A40;--green:#A6D8AE;--btn:#A6D8AE;--btn-ink:#0C1A10;--focus:#F0C94F;--deep:#14301F}}
+.k2 *{box-sizing:border-box}
+.k2 h1,.k2 h2,.k2 h3{font-family:'Zilla Slab',Georgia,serif;font-weight:700;margin:0;color:var(--ink)}
+.k2 h1{font-size:clamp(32px,8vw,54px);line-height:1.1;margin-bottom:20px;max-width:20em}
+.k2 h3{font-size:26px;line-height:1.2;margin-bottom:8px}
+.k2 p{margin:0}
+.k2 a:focus-visible{outline:3px solid var(--focus);outline-offset:3px}
+.wrap{max-width:1000px;margin:0 auto;padding:0 20px}
+.hdr .wrap{display:flex;align-items:center;justify-content:space-between;min-height:72px}
+.mark{font-family:'Zilla Slab',Georgia,serif;font-weight:700;font-size:28px;color:var(--ink);text-decoration:none;display:inline-flex;align-items:center;min-height:54px}
+.tel{display:none;font-weight:700;font-size:20px;color:var(--ink);text-decoration:none;align-items:center;min-height:54px}
+.aud{border-bottom:1px solid var(--rule);border-top:1px solid var(--rule)}
+.aud .wrap{display:flex;padding:0}
+.aud a{flex:1;min-height:54px;display:flex;align-items:center;justify-content:center;text-align:center;font-weight:700;font-size:17px;color:var(--ink2);text-decoration:none;border-bottom:4px solid transparent}
+.aud a.on{color:var(--ink);border-bottom-color:var(--green)}
+.sec{padding:48px 0;border-top:1px solid var(--rule)}
+.lede{font-size:20px;max-width:34em}
+.items{display:grid;grid-template-columns:minmax(0,1fr)}
+.item{padding:22px 0;border-top:4px solid var(--ink)}
+.item p{max-width:26em;color:var(--ink2)}
+.btn{display:flex;align-items:center;justify-content:center;min-height:58px;padding:0 24px;background:var(--btn);color:var(--btn-ink)!important;font:700 19px/1.2 'Atkinson Hyperlegible',system-ui,sans-serif;border-radius:4px;text-decoration:none;margin-top:20px}
+.callbar{position:sticky;bottom:0;display:flex;align-items:center;justify-content:center;min-height:64px;background:var(--deep);color:var(--deep-ink);font:700 22px/1.2 'Atkinson Hyperlegible',system-ui,sans-serif;text-decoration:none}
+@media (min-width:760px){.wrap{padding:0 40px}.tel{display:inline-flex}.aud .wrap{padding:0 40px;gap:8px}.aud a{flex:none;padding:0 24px;font-size:18px}.sec{padding:80px 0}.items{grid-template-columns:repeat(2,minmax(0,1fr));gap:0 48px}.btn{display:inline-flex}.callbar{display:none}}
+</style>
+</helmet>
+<div class="k2">
+<header class="hdr"><div class="wrap">
+ <a class="mark" href="Main.dc.html">K2 Renew</a>
+ <a class="tel" href="tel:+17204458020">(720) 445-8020</a>
+</div></header>
+<nav class="aud" aria-label="Who are you"><div class="wrap">
+ <a href="Main.dc.html">Landowners</a>
+ <a href="Developers.dc.html">Developers</a>
+ <a class="on" href="Communities.dc.html" aria-current="page">Communities</a>
+</div></nav>
+
+<section class="sec" style="border-top:0"><div class="wrap">
+ <h1>Building energy, and opportunity, locally.</h1>
+ <p class="lede">K2 Renew's solar energy projects do more than generate clean electricity. They create long-term value for the communities they work in.</p>
+</div></section>
+
+<section class="sec"><div class="wrap">
+ <div class="items">
+  <div class="item"><h3>Local economic growth</h3><p>Solar development brings investment into rural and underutilized areas. From lease payments to construction jobs and local spending, each project contributes to the regional economy.</p></div>
+  <div class="item"><h3>Job creation</h3><p>K2 Renew partners with local contractors and skilled labor wherever possible, creating opportunities in construction, electrical work, maintenance, and land services.</p></div>
+  <div class="item"><h3>Tax revenue for community services</h3><p>Solar farms add to the local tax base, providing funding for schools, emergency services, infrastructure, and public programs.</p></div>
+  <div class="item"><h3>Environmental stewardship</h3><p>By reducing reliance on fossil fuels, the projects contribute to cleaner air, healthier ecosystems, and a more sustainable future.</p></div>
+  <div class="item"><h3>Land preservation</h3><p>Solar leases allow landowners to retain ownership while keeping their land in long-term productive use.</p></div>
+ </div>
+ <a class="btn" href="Main.dc.html">See if my land qualifies</a>
+</div></section>
+
+<a class="callbar" href="tel:+17204458020">Call (720) 445-8020</a>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1280,"height":2400}}'>
+class Component extends DCLogic {
+renderVals() {
+return {};
+}
+}
+</script>
+</body>
+</html>

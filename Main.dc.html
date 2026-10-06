@@ -37,6 +37,11 @@ background:var(--bg);color:var(--ink);font-family:'Atkinson Hyperlegible',system
 .hdr .wrap{display:flex;align-items:center;justify-content:space-between;min-height:72px}
 .mark{display:flex;align-items:center;gap:12px;font-family:'Zilla Slab',Georgia,serif;font-weight:700;font-size:28px;color:var(--ink);text-decoration:none;min-height:54px}
 .hdr-phone{display:none;align-items:center;gap:10px;min-height:54px;font-weight:700;font-size:20px;text-decoration:none;color:var(--ink)!important}
+.aud{display:flex;border-bottom:1px solid var(--rule)}
+.aud .wrap{display:flex;width:100%;padding:0}
+.aud a{flex:1;min-height:54px;display:flex;align-items:center;justify-content:center;text-align:center;font-weight:700;font-size:17px;color:var(--ink2);text-decoration:none;border-bottom:4px solid transparent}
+.aud a.on{color:var(--ink);border-bottom-color:var(--green)}
+@media (min-width:760px){.aud .wrap{padding:0 40px;justify-content:flex-start;gap:8px}.aud a{flex:none;padding:0 24px;font-size:18px}}
 /* hero */
 .hero{padding:28px 0 56px}
 .hero .wrap{display:grid;grid-template-columns:minmax(0,1fr);gap:32px}
@@ -170,6 +175,13 @@ background:var(--bg);color:var(--ink);font-family:'Atkinson Hyperlegible',system
   </a>
  </div>
 </header>
+<nav class="aud" aria-label="Who are you">
+ <div class="wrap">
+  <a class="on" href="Main.dc.html" aria-current="page">Landowners</a>
+  <a href="Developers.dc.html">Developers</a>
+  <a href="Communities.dc.html">Communities</a>
+ </div>
+</nav>
 
 <main id="top">
 

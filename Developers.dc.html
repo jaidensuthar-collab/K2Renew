@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>K2 Renew, for developers</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@600;700&family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+.k2{--bg:#F6F5EC;--band:#EBE4D0;--surface:#FFFFFF;--ink:#111B15;--ink2:#38443D;--rule:#BDB8A3;--green:#1E4B30;--btn:#1E4B30;--btn-ink:#FFFFFF;--focus:#111B15;--deep:#1E4B30;--deep-ink:#F6F5EC;--gold-bg:#F8EBC4;--gold-line:#8A6508;--gold-ink:#2E2300;
+background:var(--bg);color:var(--ink);font-family:'Atkinson Hyperlegible',system-ui,sans-serif;font-size:18px;line-height:1.65}
+@media (prefers-color-scheme: dark){.k2{--bg:#0F1611;--band:#172019;--surface:#1B261E;--ink:#EDF0E4;--ink2:#B9C4B5;--rule:#3A4A40;--green:#A6D8AE;--btn:#A6D8AE;--btn-ink:#0C1A10;--focus:#F0C94F;--deep:#14301F;--gold-bg:#3A2E0C;--gold-line:#D9AE3E;--gold-ink:#F6E6B4}}
+.k2 *{box-sizing:border-box}
+.k2 h1,.k2 h2,.k2 h3{font-family:'Zilla Slab',Georgia,serif;font-weight:700;margin:0;color:var(--ink)}
+.k2 h1{font-size:clamp(32px,8vw,54px);line-height:1.1;margin-bottom:20px;max-width:20em}
+.k2 h2{font-size:clamp(26px,6vw,38px);line-height:1.15;margin-bottom:16px}
+.k2 p{margin:0}
+.k2 a:focus-visible{outline:3px solid var(--focus);outline-offset:3px}
+.wrap{max-width:1000px;margin:0 auto;padding:0 20px}
+.hdr .wrap{display:flex;align-items:center;justify-content:space-between;min-height:72px}
+.mark{font-family:'Zilla Slab',Georgia,serif;font-weight:700;font-size:28px;color:var(--ink);text-decoration:none;display:inline-flex;align-items:center;min-height:54px}
+.tel{display:none;font-weight:700;font-size:20px;color:var(--ink);text-decoration:none;align-items:center;min-height:54px}
+.aud{border-bottom:1px solid var(--rule);border-top:1px solid var(--rule)}
+.aud .wrap{display:flex;padding:0}
+.aud a{flex:1;min-height:54px;display:flex;align-items:center;justify-content:center;text-align:center;font-weight:700;font-size:17px;color:var(--ink2);text-decoration:none;border-bottom:4px solid transparent}
+.aud a.on{color:var(--ink);border-bottom-color:var(--green)}
+.sec{padding:48px 0;border-top:1px solid var(--rule)}
+.sec.band{background:var(--band)}
+.lede{font-size:20px;max-width:34em}
+.stats{display:grid;grid-template-columns:minmax(0,1fr);margin-top:8px}
+.stat{padding:20px 0;border-top:4px solid var(--ink)}
+.num{font-family:'Zilla Slab',Georgia,serif;font-weight:700;font-size:clamp(48px,12vw,72px);line-height:1;color:var(--green);margin-bottom:8px}
+.stat p{color:var(--ink2);max-width:18em}
+.body{max-width:38em}
+.body p+p{margin-top:14px}
+.tag{display:inline-block;font-weight:700;font-size:15px;text-transform:uppercase;letter-spacing:.06em;border-bottom:2px solid var(--ink);margin-bottom:12px}
+.q{margin:0;padding:18px 0;border-top:1px solid var(--rule)}
+.q blockquote{margin:0 0 10px;font-size:20px}
+.q figcaption{color:var(--ink2)}
+.ph{background:var(--gold-bg);color:var(--gold-ink);border:2px dashed var(--gold-line);border-radius:4px;padding:14px 16px;font-size:16px;line-height:1.5;margin-top:20px;max-width:38em}
+.ph b{text-transform:uppercase;letter-spacing:.06em;font-size:15px}
+.btn{display:flex;align-items:center;justify-content:center;min-height:58px;padding:0 24px;background:var(--btn);color:var(--btn-ink)!important;font:700 19px/1.2 'Atkinson Hyperlegible',system-ui,sans-serif;border-radius:4px;text-decoration:none;margin-top:20px}
+.callbar{position:sticky;bottom:0;display:flex;align-items:center;justify-content:center;min-height:64px;background:var(--deep);color:var(--deep-ink);font:700 22px/1.2 'Atkinson Hyperlegible',system-ui,sans-serif;text-decoration:none}
+@media (min-width:760px){.wrap{padding:0 40px}.tel{display:inline-flex}.aud .wrap{padding:0 40px;gap:8px}.aud a{flex:none;padding:0 24px;font-size:18px}.sec{padding:80px 0}.stats{grid-template-columns:repeat(3,minmax(0,1fr));gap:40px}.btn{display:inline-flex}.callbar{display:none}}
+</style>
+</helmet>
+<div class="k2">
+<header class="hdr"><div class="wrap">
+ <a class="mark" href="Main.dc.html">K2 Renew</a>
+ <a class="tel" href="tel:+17204458020">(720) 445-8020</a>
+</div></header>
+<nav class="aud" aria-label="Who are you"><div class="wrap">
+ <a href="Main.dc.html">Landowners</a>
+ <a class="on" href="Developers.dc.html" aria-current="page">Developers</a>
+ <a href="Communities.dc.html">Communities</a>
+</div></nav>
+
+<section class="sec" style="border-top:0"><div class="wrap">
+ <h1>Access competitively priced, development-ready sites across priority American markets.</h1>
+ <p class="lede">Pre-screened, landowner-aligned parcels help you reduce risk, manage costs, and accelerate project success.</p>
+ <a class="btn" href="tel:+17204458020">Call (720) 445-8020</a>
+ <div class="ph"><b>To confirm</b><br>The live site has a partners form, but its wording and the button label for developers are not in the verified facts. K2 Renew to supply.</div>
+</div></section>
+
+<section class="sec band"><div class="wrap">
+ <h2>How K2 Renew sources land</h2>
+ <div class="body">
+  <p>K2 Renew connects renewable energy developers with development-ready sites across high-potential U.S. markets.</p>
+  <p>Their approach combines advanced GIS insights with direct landowner engagement to identify properties aligned with zoning, permitting, and interconnection needs.</p>
+  <p>K2 Renew offers customized site matching to meet specific operational objectives, whether developers need proximity to substations, RFP compliance, or regional scaling.</p>
+ </div>
+</div></section>
+
+<section class="sec"><div class="wrap">
+ <h2>Success-based, with zero upfront cost</h2>
+ <div class="body"><p>K2 Renew operates on a success-based model with zero upfront costs. Developers pay only for sites that pass due diligence and receive formal assignment.</p></div>
+ <div class="stats" style="margin-top:32px">
+  <div class="stat"><div class="num">90+</div><p>More than 90 of the nation's top renewable energy developers</p></div>
+  <div class="stat"><div class="num">40,000+</div><p>Over 40,000 acres for renewable energy development</p></div>
+  <div class="stat"><div class="num">85,352.84</div><p>acres under contract</p></div>
+ </div>
+</div></section>
+
+<section class="sec band"><div class="wrap">
+ <h2>What developers say</h2>
+ <span class="tag">From developers</span>
+ <figure class="q"><blockquote>"K2 Renew knows their stuff. They have a great reputation with landowners and other developers across the U.S. K2 is very talented at finding good solar sites and contracting with landowners for appropriate rates. The rates they offer provide great returns landowners, while remaining competitive to get the utilities to approve their projects."</blockquote><figcaption><b>Tai</b><br>Industry Leading Owner and National Developer</figcaption></figure>
+ <figure class="q"><blockquote>"We have worked with many other development partners, and K2 Renew stands head-and shoulders above the crowd in their integrity, communication, and ability to deliver on their commitments."</blockquote><figcaption><b>Michelle</b><br>Leading National Community Solar Developer</figcaption></figure>
+ <figure class="q"><blockquote>"They have helped us find some great solar farm sites and have always been there when we need them. K2 Renew is a fantastic development partner with whom we look forward to co-developing many solar farms."</blockquote><figcaption><b>Casey</b><br>National Developer and Industry Leading Owner</figcaption></figure>
+</div></section>
+
+<a class="callbar" href="tel:+17204458020">Call (720) 445-8020</a>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1280,"height":3200}}'>
+class Component extends DCLogic {
+renderVals() {
+return {};
+}
+}
+</script>
+</body>
+</html>

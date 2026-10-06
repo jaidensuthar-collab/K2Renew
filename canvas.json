@@ -2,19 +2,99 @@
   "v": 3,
   "attachments": {},
   "boards": {
-    "Main.dc.html": { "expand": "fill", "h": 7400, "title": "Desktop 1280", "w": 1280, "x": 0, "y": 0 },
-    "Mobile.dc.html": { "expand": "fill", "h": 8000, "title": "iPhone 390", "w": 390, "x": 1360, "y": 0 },
-    "FaqPage.dc.html": { "expand": "fill", "h": 900, "title": "FAQ: do I still own it", "w": 820, "x": 0, "y": 7520 },
-    "FaqRestored.dc.html": { "expand": "fill", "h": 900, "title": "FAQ: restored", "w": 820, "x": 900, "y": 7520 },
-    "FaqFarm.dc.html": { "expand": "fill", "h": 900, "title": "FAQ: farm or graze", "w": 820, "x": 1800, "y": 7520 },
-    "FaqAcres.dc.html": { "expand": "fill", "h": 900, "title": "FAQ: how much land", "w": 820, "x": 2700, "y": 7520 },
-    "FaqSell.dc.html": { "expand": "fill", "h": 900, "title": "FAQ: sell", "w": 820, "x": 3600, "y": 7520 }
+    "Main.dc.html": {
+      "expand": "fill",
+      "h": 7400,
+      "title": "Desktop 1280",
+      "w": 1280,
+      "x": 0,
+      "y": 0
+    },
+    "Mobile.dc.html": {
+      "expand": "fill",
+      "h": 8000,
+      "title": "iPhone 390",
+      "w": 390,
+      "x": 1360,
+      "y": 0
+    },
+    "FaqPage.dc.html": {
+      "expand": "fill",
+      "h": 900,
+      "title": "FAQ: do I still own it",
+      "w": 820,
+      "x": 0,
+      "y": 7520
+    },
+    "FaqRestored.dc.html": {
+      "expand": "fill",
+      "h": 900,
+      "title": "FAQ: restored",
+      "w": 820,
+      "x": 900,
+      "y": 7520
+    },
+    "FaqFarm.dc.html": {
+      "expand": "fill",
+      "h": 900,
+      "title": "FAQ: farm or graze",
+      "w": 820,
+      "x": 1800,
+      "y": 7520
+    },
+    "FaqAcres.dc.html": {
+      "expand": "fill",
+      "h": 900,
+      "title": "FAQ: how much land",
+      "w": 820,
+      "x": 2700,
+      "y": 7520
+    },
+    "FaqSell.dc.html": {
+      "expand": "fill",
+      "h": 900,
+      "title": "FAQ: sell",
+      "w": 820,
+      "x": 3600,
+      "y": 7520
+    },
+    "Developers.dc.html": {
+      "expand": "fill",
+      "h": 3200,
+      "title": "Developers",
+      "w": 1280,
+      "x": 0,
+      "y": 8520
+    },
+    "Communities.dc.html": {
+      "expand": "fill",
+      "h": 2400,
+      "title": "Communities",
+      "w": 1280,
+      "x": 1360,
+      "y": 8520
+    }
   },
-  "createdOnFiles": { "at": "2026-10-06T12:00:00Z", "v": 1 },
+  "createdOnFiles": {
+    "at": "2026-10-06T12:00:00Z",
+    "v": 1
+  },
   "designSystems": [],
-  "launch": { "view": "canvas" },
+  "launch": {
+    "view": "canvas"
+  },
   "notes": {},
-  "order": ["Main.dc.html", "Mobile.dc.html", "FaqPage.dc.html", "FaqRestored.dc.html", "FaqFarm.dc.html", "FaqAcres.dc.html", "FaqSell.dc.html"],
+  "order": [
+    "Main.dc.html",
+    "Mobile.dc.html",
+    "FaqPage.dc.html",
+    "FaqRestored.dc.html",
+    "FaqFarm.dc.html",
+    "FaqAcres.dc.html",
+    "FaqSell.dc.html",
+    "Developers.dc.html",
+    "Communities.dc.html"
+  ],
   "pages": [],
   "title": "K2 Renew Landowner Page"
 }
