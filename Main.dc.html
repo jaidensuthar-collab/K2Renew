@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>K2 Renew, landowner page</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@600;700&family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+.k2{--bg:#F6F5EC;--band:#EBE4D0;--surface:#FFFFFF;--ink:#111B15;--ink2:#38443D;--rule:#BDB8A3;--green:#1E4B30;--btn:#1E4B30;--btn-ink:#FFFFFF;--btn-hover:#143823;--link:#1E4B30;--focus:#111B15;--deep:#1E4B30;--deep-ink:#F6F5EC;--deep-btn:#EBE4D0;--deep-btn-ink:#143823;--gold-bg:#F8EBC4;--gold-line:#8A6508;--gold-ink:#2E2300;
+background:var(--bg);color:var(--ink);font-family:'Atkinson Hyperlegible',system-ui,-apple-system,sans-serif;font-size:18px;line-height:1.65;-webkit-text-size-adjust:100%}
+.k2[data-theme="dark"]{--bg:#0F1611;--band:#172019;--surface:#1B261E;--ink:#EDF0E4;--ink2:#B9C4B5;--rule:#3A4A40;--green:#A6D8AE;--btn:#A6D8AE;--btn-ink:#0C1A10;--btn-hover:#C0E8C7;--link:#A6D8AE;--focus:#F0C94F;--deep:#14301F;--deep-ink:#EDF0E4;--deep-btn:#EBE4D0;--deep-btn-ink:#143823;--gold-bg:#3A2E0C;--gold-line:#D9AE3E;--gold-ink:#F6E6B4}
+@media (prefers-color-scheme: dark){
+.k2[data-theme="auto"]{--bg:#0F1611;--band:#172019;--surface:#1B261E;--ink:#EDF0E4;--ink2:#B9C4B5;--rule:#3A4A40;--green:#A6D8AE;--btn:#A6D8AE;--btn-ink:#0C1A10;--btn-hover:#C0E8C7;--link:#A6D8AE;--focus:#F0C94F;--deep:#14301F;--deep-ink:#EDF0E4;--deep-btn:#EBE4D0;--deep-btn-ink:#143823;--gold-bg:#3A2E0C;--gold-line:#D9AE3E;--gold-ink:#F6E6B4}
+}
+.k2 *{box-sizing:border-box}
+.k2 h1,.k2 h2,.k2 h3{font-family:'Zilla Slab',Georgia,serif;font-weight:700;margin:0;color:var(--ink)}
+.k2 p{margin:0}
+.k2 ul,.k2 ol{margin:0;padding:0;list-style:none}
+.k2 a{color:var(--link)}
+.k2 a:focus-visible,.k2 button:focus-visible,.k2 input:focus-visible{outline:3px solid var(--focus);outline-offset:3px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+.sec{padding:56px 0;border-top:1px solid var(--rule)}
+.sec.band{background:var(--band)}
+.k2 h2{font-size:clamp(28px,6.4vw,42px);line-height:1.15;margin-bottom:20px;max-width:22em}
+.lede{max-width:38em;color:var(--ink2)}
+.btn{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;min-height:58px;padding:0 24px;background:var(--btn);color:var(--btn-ink)!important;font:700 19px/1.2 'Atkinson Hyperlegible',system-ui,sans-serif;border:0;border-radius:4px;text-decoration:none;cursor:pointer}
+.btn:hover{background:var(--btn-hover)}
+.ph{background:var(--gold-bg);color:var(--gold-ink);border:2px dashed var(--gold-line);border-radius:4px;padding:14px 16px;font-size:16px;line-height:1.5}
+.ph b{text-transform:uppercase;letter-spacing:.06em;font-size:15px}
+/* header */
+.hdr .wrap{display:flex;align-items:center;justify-content:space-between;min-height:72px}
+.mark{display:flex;align-items:center;gap:12px;font-family:'Zilla Slab',Georgia,serif;font-weight:700;font-size:28px;color:var(--ink);text-decoration:none;min-height:54px}
+.hdr-phone{display:none;align-items:center;gap:10px;min-height:54px;font-weight:700;font-size:20px;text-decoration:none;color:var(--ink)!important}
+/* hero */
+.hero{padding:28px 0 56px}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1fr);gap:32px}
+.hero h1{font-size:clamp(36px,9.4vw,64px);line-height:1.08;letter-spacing:-.01em;margin-bottom:20px}
+.hero .sub{font-size:20px;max-width:34em;margin-bottom:24px}
+.ticks li{display:flex;align-items:center;gap:14px;min-height:48px;font-weight:700;font-size:20px}
+.ticks svg{flex:none}
+.thresh{margin-top:20px;padding-top:16px;border-top:1px solid var(--rule);max-width:34em;color:var(--ink2)}
+.thresh strong{color:var(--ink)}
+.form{background:var(--surface);border:2px solid var(--ink);border-radius:4px;padding:24px 20px}
+.form h2{font-size:28px;margin-bottom:6px}
+.form .note{color:var(--ink2);margin-bottom:18px}
+.field{display:block;margin-bottom:16px}
+.field span{display:block;font-weight:700;margin-bottom:6px}
+.field input{display:block;width:100%;min-height:58px;padding:0 14px;font:400 19px 'Atkinson Hyperlegible',system-ui,sans-serif;color:var(--ink);background:var(--bg);border:2px solid var(--ink2);border-radius:4px}
+.consent{display:flex;align-items:flex-start;gap:14px;min-height:54px;padding:10px 0;margin-bottom:18px;cursor:pointer}
+.consent input{flex:none;width:30px;height:30px;margin:4px 0 0;accent-color:var(--green)}
+.photo-ph{aspect-ratio:16/10;display:flex;align-items:flex-end}
+.photo-ph .ph{width:100%;border-left:0;border-right:0;border-bottom:0;border-radius:0}
+/* problem */
+.ledger li{padding:18px 0;border-top:1px solid var(--rule);font-size:20px;max-width:34em}
+.ledger li:last-child{border-bottom:1px solid var(--rule)}
+/* credibility */
+.stats{display:grid;grid-template-columns:minmax(0,1fr);gap:0;margin:8px 0 32px}
+.stat{padding:20px 0;border-top:4px solid var(--ink)}
+.num{font-family:'Zilla Slab',Georgia,serif;font-weight:700;font-size:clamp(52px,13vw,76px);line-height:1;color:var(--green);margin-bottom:8px}
+.stat p{color:var(--ink2);max-width:18em}
+.disclose{border-top:4px solid var(--green);background:var(--surface);padding:24px 20px;margin-bottom:36px}
+.disclose h3{font-size:26px;margin-bottom:10px}
+.disclose p{max-width:40em}
+.quotes{display:grid;grid-template-columns:minmax(0,1fr);gap:16px;margin-top:16px}
+.tag{display:inline-block;font-weight:700;font-size:15px;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);border-bottom:2px solid var(--ink);margin-bottom:8px}
+/* plan */
+.steps{display:grid;grid-template-columns:minmax(0,1fr);gap:0}
+.step{padding:20px 0;border-top:1px solid var(--rule)}
+.step .n{font-family:'Zilla Slab',Georgia,serif;font-weight:700;font-size:56px;line-height:1;color:var(--green);margin-bottom:8px}
+.step h3{font-size:26px;margin-bottom:8px}
+.step p{color:var(--ink2);max-width:22em}
+.after{margin-top:32px;max-width:420px}
+/* lease table */
+.rows{border-top:2px solid var(--ink)}
+.row{display:grid;grid-template-columns:minmax(0,1fr);gap:4px;padding:18px 0;border-bottom:1px solid var(--rule)}
+.row dt{font-family:'Zilla Slab',Georgia,serif;font-weight:700;font-size:23px;line-height:1.25}
+.row dd{margin:0;max-width:36em}
+.row dd p+p{margin-top:10px;color:var(--ink2)}
+.rows{margin:0}
+/* candidate */
+.cards{display:grid;grid-template-columns:minmax(0,1fr);gap:0}
+.card{padding:20px 0;border-top:4px solid var(--ink)}
+.card .big{font-family:'Zilla Slab',Georgia,serif;font-weight:700;font-size:clamp(44px,11vw,60px);line-height:1;color:var(--green);margin-bottom:10px}
+.card p{max-width:20em}
+.card .sm{color:var(--ink2);margin-top:6px}
+.also{margin-top:24px;max-width:40em;color:var(--ink2)}
+/* myths */
+.myths{display:grid;grid-template-columns:minmax(0,1fr);gap:0}
+.myth{padding:22px 0;border-top:1px solid var(--rule)}
+.myth .tag{border-color:var(--gold-line)}
+.myth h3{font-size:26px;line-height:1.2;margin-bottom:10px}
+.myth p{max-width:26em}
+/* placeholders */
+.slots{display:grid;grid-template-columns:minmax(0,1fr);gap:16px;margin-top:8px}
+.slot{background:var(--gold-bg);color:var(--gold-ink);border:2px dashed var(--gold-line);border-radius:4px;padding:18px;font-size:16px;line-height:1.5}
+.slot .img{aspect-ratio:4/3;border:2px dashed var(--gold-line);margin-bottom:12px;display:flex;align-items:center;justify-content:center;text-align:center;padding:12px}
+.slot h3{color:var(--gold-ink);font-size:22px;margin-bottom:6px}
+.slot ul{margin-top:8px}
+.slot li{padding:2px 0}
+.slot li:before{content:"\2013\00a0"}
+/* faq */
+.faq a{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:64px;padding:12px 0;border-top:1px solid var(--rule);font-family:'Zilla Slab',Georgia,serif;font-weight:700;font-size:23px;line-height:1.25;color:var(--ink)!important;text-decoration:none}
+.faq a:last-child{border-bottom:1px solid var(--rule)}
+.faq a:hover{color:var(--green)!important;text-decoration:underline}
+.faq svg{flex:none}
+/* final */
+.final{background:var(--deep);color:var(--deep-ink);padding:64px 0}
+.final h2{color:var(--deep-ink)}
+.final p{max-width:34em;margin-bottom:24px}
+.final .btn{background:var(--deep-btn);color:var(--deep-btn-ink)!important}
+.final .btn:hover{background:#FFFFFF}
+.final .ph{margin-top:20px;max-width:34em}
+.final a.tel{color:var(--deep-ink)!important;font-weight:700;font-size:24px;display:inline-flex;align-items:center;min-height:54px}
+.final a:focus-visible,.final .btn:focus-visible{outline-color:#F0C94F}
+/* footer */
+.ftr{padding:40px 0 120px;border-top:1px solid var(--rule)}
+.ftr .wrap{display:grid;grid-template-columns:minmax(0,1fr);gap:24px}
+.ftr p{color:var(--ink2)}
+.ftr a.tel{font-weight:700;display:inline-flex;align-items:center;min-height:54px;color:var(--ink)!important}
+/* sticky call bar */
+.callbar{position:sticky;bottom:0;z-index:5;display:flex;align-items:center;justify-content:center;gap:12px;min-height:64px;background:var(--deep);color:var(--deep-ink)!important;font:700 22px/1.2 'Atkinson Hyperlegible',system-ui,sans-serif;text-decoration:none;border-top:2px solid var(--deep-btn)}
+.callbar:focus-visible{outline:3px solid #F0C94F;outline-offset:-6px}
+@media (min-width:760px){
+ body{font-size:18px}
+ .wrap{padding:0 40px}
+ .sec{padding:88px 0}
+ .hdr-phone{display:inline-flex}
+ .stats{grid-template-columns:repeat(3,minmax(0,1fr));gap:40px}
+ .quotes{grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+ .steps{grid-template-columns:repeat(3,minmax(0,1fr));gap:40px}
+ .step{border-top:4px solid var(--ink)}
+ .cards{grid-template-columns:repeat(3,minmax(0,1fr));gap:40px}
+ .myths{grid-template-columns:repeat(3,minmax(0,1fr));gap:40px}
+ .myth{border-top:4px solid var(--ink)}
+ .slots{grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+ .row{grid-template-columns:minmax(0,5fr) minmax(0,8fr);gap:40px;padding:22px 0}
+ .btn{width:auto;min-width:300px}
+ .form .btn{width:100%}
+ .disclose{padding:32px 36px}
+ .ftr .wrap{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+ .ftr{padding-bottom:48px}
+ .callbar{display:none}
+}
+@media (min-width:980px){
+ .hero{padding:48px 0 88px}
+ .hero .wrap{grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);grid-template-areas:"copy form" "photo form";column-gap:64px;row-gap:40px}
+ .hero-copy{grid-area:copy}
+ .form{grid-area:form;align-self:start;padding:32px 28px}
+ .photo-ph{grid-area:photo}
+}
+</style>
+</helmet>
+<div class="k2" data-theme="{{theme}}">
+
+<header class="hdr">
+ <div class="wrap">
+  <a class="mark" href="#top" aria-label="K2 Renew, home">
+   <svg width="34" height="34" viewBox="0 0 34 34" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square" aria-hidden="true"><path d="M3 9h28M3 17h28M3 25h28"/></svg>
+   K2 Renew
+  </a>
+  <a class="hdr-phone" href="tel:+17204458020">
+   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2z"/></svg>
+   (720) 445-8020
+  </a>
+ </div>
+</header>
+
+<main id="top">
+
+<section class="hero">
+ <div class="wrap">
+  <div class="hero-copy">
+   <h1>Get paid for your land without selling it.</h1>
+   <p class="sub">K2 Renew finds out, at no cost, whether your acreage can earn from solar. If it can, they bring you a developer who will lease it. Your name stays on the deed.</p>
+   <ul class="ticks">
+    <li><svg width="30" height="30" viewBox="0 0 30 30" fill="none" stroke="var(--green)" stroke-width="3.5" stroke-linecap="square" aria-hidden="true"><path d="M5 16l7 7L26 7"/></svg>You keep the deed</li>
+    <li><svg width="30" height="30" viewBox="0 0 30 30" fill="none" stroke="var(--green)" stroke-width="3.5" stroke-linecap="square" aria-hidden="true"><path d="M5 16l7 7L26 7"/></svg>No cost to find out</li>
+    <li><svg width="30" height="30" viewBox="0 0 30 30" fill="none" stroke="var(--green)" stroke-width="3.5" stroke-linecap="square" aria-hidden="true"><path d="M5 16l7 7L26 7"/></svg>No obligation to sign</li>
+   </ul>
+   <p class="thresh"><strong>What they look for:</strong> 100+ contiguous, usable acres. Parcels of 20 to 100 acres may qualify if combined with neighboring properties.</p>
+  </div>
+
+  <form class="form" id="form" aria-labelledby="form-h">
+   <h2 id="form-h">Find out at no cost</h2>
+   <p class="note">Four details. No long form.</p>
+   <label class="field"><span>State</span><input type="text" name="state" autocomplete="address-level1"></label>
+   <label class="field"><span>County</span><input type="text" name="county"></label>
+   <label class="field"><span>Approximate acreage</span><input type="text" name="acreage" inputmode="numeric"></label>
+   <label class="field"><span>Phone</span><input type="tel" name="phone" autocomplete="tel"></label>
+   <label class="consent">
+    <input type="checkbox" name="sms_consent" required>
+    <span class="consent-text" style="font-size:16px;line-height:1.5">I consent to receiving SMS and Email notifications, alerts, and occasional communications about K2 Renew's services and renewable energy opportunities. Message frequency may vary, and standard message and data rates may apply. You can reply 'STOP' to unsubscribe at any time.</span>
+   </label>
+   <button class="btn" type="button">See if my land qualifies</button>
+  </form>
+
+  <div class="photo-ph">
+   <div class="ph"><b>Photo needed</b><br>A real leased site: fence line, crop, access road, sheep grazing between panel rows. No stock drone shots.</div>
+  </div>
+ </div>
+</section>
+
+<section class="sec band">
+ <div class="wrap">
+  <h2>You are probably not short of phone calls.</h2>
+  <p class="lede" style="margin-bottom:24px">What is hard to find is a straight answer. This is what most landowners say they cannot get:</p>
+  <ul class="ledger">
+   <li>Nobody says what the land is worth, or why.</li>
+   <li>Everything is a long form before you learn anything.</li>
+   <li>You are not told what you would be signing, or for how long.</li>
+   <li>Nobody explains who actually ends up leasing the ground.</li>
+  </ul>
+ </div>
+</section>
+
+<section class="sec">
+ <div class="wrap">
+  <h2>The developers are the ones who check our work.</h2>
+  <div class="stats">
+   <div class="stat"><div class="num">90+</div><p>More than 90 of the nation's top renewable energy developers</p></div>
+   <div class="stat"><div class="num">40,000+</div><p>Over 40,000 acres for renewable energy development</p></div>
+   <div class="stat"><div class="num">85,352.84</div><p>acres under contract</p></div>
+  </div>
+  <div class="disclose">
+   <h3>K2 Renew is not the company that builds the solar farm.</h3>
+   <p>K2 Renew sources and evaluates land, then brings development-ready sites to the developers they work with. The developer is who you would sign with. The developer handles construction and pays for it.</p>
+  </div>
+  <span class="tag">In their words, from developers, not landowners</span>
+  <div class="quotes">
+   <figure style="margin:0;padding:18px 0;border-top:1px solid var(--rule)"><blockquote style="margin:0 0 10px;font-size:20px">"K2 Renew knows their stuff. They have a great reputation with landowners and other developers across the U.S."</blockquote><figcaption style="color:var(--ink2)"><b style="color:var(--ink)">Tai</b><br>Industry Leading Owner and National Developer</figcaption></figure>
+   <figure style="margin:0;padding:18px 0;border-top:1px solid var(--rule)"><blockquote style="margin:0 0 10px;font-size:20px">"K2 Renew stands head-and shoulders above the crowd in their integrity, communication, and ability to deliver on their commitments."</blockquote><figcaption style="color:var(--ink2)"><b style="color:var(--ink)">Michelle</b><br>Leading National Community Solar Developer</figcaption></figure>
+   <figure style="margin:0;padding:18px 0;border-top:1px solid var(--rule)"><blockquote style="margin:0 0 10px;font-size:20px">"K2 Renew is a fantastic development partner...They have helped us find some great solar farm sites."</blockquote><figcaption style="color:var(--ink2)"><b style="color:var(--ink)">Casey</b><br>National Developer and Industry Leading Owner</figcaption></figure>
+  </div>
+ </div>
+</section>
+
+<section class="sec band">
+ <div class="wrap">
+  <h2>The plan, in three steps.</h2>
+  <div class="steps">
+   <div class="step"><div class="n">1</div><h3>Tell us where the land is.</h3><p>State, county, rough acreage and a phone number.</p></div>
+   <div class="step"><div class="n">2</div><h3>We evaluate it at no cost.</h3><p>Land is evaluated remotely at no cost, with no commitment.</p></div>
+   <div class="step"><div class="n">3</div><h3>You decide, then you get paid for decades.</h3><p>If it can earn, K2 Renew brings you a developer who will lease it. Payments start before construction.</p></div>
+  </div>
+  <div class="after"><a class="btn" href="#form">See if my land qualifies</a></div>
+ </div>
+</section>
+
+<section class="sec">
+ <div class="wrap">
+  <h2>What a lease actually commits you to.</h2>
+  <p class="lede" style="margin-bottom:28px">Eight things, in the order most landowners ask.</p>
+  <dl class="rows">
+   <div class="row"><dt>Who holds the deed</dt><dd>You do. Your name stays on the deed.</dd></div>
+   <div class="row"><dt>How long the lease runs</dt><dd><div class="ph"><b>Lease term missing</b><br>k2renew.com does not state one anywhere. K2 Renew to supply. No number goes here until they do.</div></dd></div>
+   <div class="row"><dt>What happens at the end</dt><dd>Every lease includes decommissioning and restoration clauses requiring removal of equipment and return to original condition.</dd></div>
+   <div class="row"><dt>Farming or grazing meanwhile</dt><dd>The development phase typically lasts 2 to 5 years. During it, most land stays usable for farming, grazing or hunting.</dd></div>
+   <div class="row"><dt>If the lease is cancelled</dt><dd>The land reverts to full use and you keep any payments already made.</dd></div>
+   <div class="row"><dt>If you sell the land</dt><dd>The lease transfers with the property. The new owner honors the existing terms.</dd></div>
+   <div class="row"><dt>Who pays the costs</dt><dd>The developer handles all costs, permitting and upkeep. You are never asked to cover costs.</dd></div>
+   <div class="row"><dt>When payments start</dt><dd><p>During the development phase, before construction. They increase to the full rate once the site is operational.</p><p>Lease rates vary by location, infrastructure access, and market demand. In most cases, energy leases provide higher and more stable income than traditional farming or ranching.</p></dd></div>
+  </dl>
+  <div class="after"><a class="btn" href="#form">See if my land qualifies</a></div>
+ </div>
+</section>
+
+<section class="sec band">
+ <div class="wrap">
+  <h2>What makes land a strong candidate.</h2>
+  <div class="cards">
+   <div class="card"><div class="big">100+</div><p>contiguous, usable acres</p></div>
+   <div class="card"><div class="big">1 to 3</div><p>miles from a high-voltage line or substation</p></div>
+   <div class="card"><div class="big">Flat</div><p>or gently rolling</p><p class="sm">Minimal slope, wetlands or floodplain.</p></div>
+  </div>
+  <p class="also">Favorable zoning or rezoning potential also counts. Smaller parcels of 20 to 100 acres may qualify if combined with neighboring properties or if the area supports smaller-scale distribution projects.</p>
+ </div>
+</section>
+
+<section class="sec">
+ <div class="wrap">
+  <h2>Three myths.</h2>
+  <div class="myths">
+   <div class="myth"><span class="tag">Myth</span><h3>You lose control of your land.</h3><p>Your name stays on the deed. If the lease is cancelled, the land reverts to full use.</p></div>
+   <div class="myth"><span class="tag">Myth</span><h3>It hurts your property value.</h3><div class="ph"><b>Answer missing</b><br>Nothing on k2renew.com supports a claim either way. K2 Renew to supply a sourced answer.</div></div>
+   <div class="myth"><span class="tag">Myth</span><h3>You are left with the upkeep.</h3><p>The developer handles all costs, permitting and upkeep. You are never asked to cover costs.</p></div>
+  </div>
+ </div>
+</section>
+
+<section class="sec band">
+ <div class="wrap">
+  <h2>Landowner stories.</h2>
+  <p class="lede">The most persuasive thing on this page, and the one thing not yet written. Three real accounts, filmed or written.</p>
+  <div class="slots">
+   <div class="slot"><div class="img"><b>Photo or film still of the actual land</b></div><h3>Story 1</h3><ul><li>First name</li><li>County</li><li>Acreage</li><li>How long they took to decide</li></ul></div>
+   <div class="slot"><div class="img"><b>Photo or film still of the actual land</b></div><h3>Story 2</h3><ul><li>First name</li><li>County</li><li>Acreage</li><li>How long they took to decide</li></ul></div>
+   <div class="slot"><div class="img"><b>Photo or film still of the actual land</b></div><h3>Story 3</h3><ul><li>First name</li><li>County</li><li>Acreage</li><li>How long they took to decide</li></ul><p style="margin-top:8px"><b>At least one should say they were skeptical at first.</b></p></div>
+  </div>
+ </div>
+</section>
+
+<section class="sec">
+ <div class="wrap">
+  <h2>The team.</h2>
+  <p class="lede">For a multi-decade commitment on inherited land, a face and a name matter. Three people, real photos.</p>
+  <div class="slots">
+   <div class="slot"><div class="img"><b>Photo</b></div><h3>Name</h3><ul><li>Role</li><li>Region covered</li></ul></div>
+   <div class="slot"><div class="img"><b>Photo</b></div><h3>Name</h3><ul><li>Role</li><li>Region covered</li></ul></div>
+   <div class="slot"><div class="img"><b>Photo</b></div><h3>Name</h3><ul><li>Role</li><li>Region covered</li></ul></div>
+  </div>
+ </div>
+</section>
+
+<section class="sec band">
+ <div class="wrap">
+  <h2>Questions landowners ask us.</h2>
+  <p class="lede" style="margin-bottom:24px">Not ready to give a phone number? Start here.</p>
+  <nav class="faq" aria-label="Questions landowners ask">
+   <a href="#faq-1">Do I still own the land?<svg width="26" height="26" viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square" aria-hidden="true"><path d="M9 4l9 9-9 9"/></svg></a>
+   <a href="#faq-2">How long am I locked in?<svg width="26" height="26" viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square" aria-hidden="true"><path d="M9 4l9 9-9 9"/></svg></a>
+   <a href="#faq-3">Is my ground ruined at the end?<svg width="26" height="26" viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square" aria-hidden="true"><path d="M9 4l9 9-9 9"/></svg></a>
+   <a href="#faq-4">Can I still farm or graze it?<svg width="26" height="26" viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square" aria-hidden="true"><path d="M9 4l9 9-9 9"/></svg></a>
+   <a href="#faq-5">Do I have enough acres?<svg width="26" height="26" viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square" aria-hidden="true"><path d="M9 4l9 9-9 9"/></svg></a>
+  </nav>
+  <div class="ph" style="margin-top:16px;max-width:40em"><b>To build</b><br>Each link becomes its own page with its own URL. The answers live on /resources today; /faq is empty. Note: the /resources answer on acreage says "at least 300 acres", which contradicts 100+. K2 Renew to reconcile before it is copied across.</div>
+ </div>
+</section>
+
+<section class="final">
+ <div class="wrap">
+  <h2>Find out if your land qualifies.</h2>
+  <p>It costs nothing, takes four details, and you are not obliged to sign anything.</p>
+  <a class="btn" href="#form">See if my land qualifies</a>
+  <p style="margin:28px 0 0">Prefer to talk to someone?</p>
+  <a class="tel" href="tel:+17204458020">(720) 445-8020</a>
+  <div class="ph"><b>Not stated on k2renew.com</b><br>Business hours, and who answers the phone. K2 Renew to supply. Nothing is invented here.</div>
+ </div>
+</section>
+
+</main>
+
+<footer class="ftr">
+ <div class="wrap">
+  <div>
+   <a class="mark" href="#top" style="font-size:24px">K2 Renew</a>
+   <p>1905 Sherman Street, Suite 200<br>Denver, Colorado 80203</p>
+   <a class="tel" href="tel:+17204458020">(720) 445-8020</a>
+  </div>
+  <div class="ph"><b>Legal name to confirm</b><br>The live site uses both K2 Renew LLC and K2 Renew NW LLC. K2 Renew to say which one belongs in this footer.</div>
+ </div>
+</footer>
+
+<a class="callbar" href="tel:+17204458020">
+ <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2z"/></svg>
+ Call (720) 445-8020
+</a>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"theme":{"editor":"enum","default":"auto","options":["auto","light","dark"],"section":"Theme"},"$preview":{"width":1280,"height":7400}}'>
+class Component extends DCLogic {
+renderVals() {
+return { theme: this.props.theme ?? 'auto' };
+}
+}
+</script>
+</body>
+</html>
